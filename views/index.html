@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<title>Odds</title>
+
+</head>
+
+<body>
+	
+<form name="teamForm" ng-controller="TeamlistController">
+	
+	<ul>
+		<li><a href="" ng-click="showHome()">Home</a></li>
+		<li><a href="" ng-click="showDaysGames()">Tulevat Pelit</a></li>
+		<li><a href="/voima">Voimasuhteet</a></li>
+		<li><a href="" ng-click="logout()">Logout</a></li>
+	</ul>
+	
+	<div class="cc-selector" ng-show="showgameselector">
+	<ul class = "homelist">
+		<li ng-repeat="team in teamlist">		
+			<input type="radio" id="homelabel{{$index+1}}" ng-model="formData.home" ng-disabled="formData.visi == team.name" name="homeName" value="{{team.name}}" ng-change="calculate()" required />			
+			<label for="homelabel{{$index+1}}" ng-class="getClass($index, team.name)"/>
+		</li>
+	</ul>
+	
+	<ul class = "visilist">
+		<li ng-repeat="team in teamlist">		
+			<input type="radio" id="visilabel{{$index+1}}"ng-model="formData.visi" ng-disabled="formData.home == team.name" name="visiName" value="{{team.name}}" ng-change="calculate()" required />
+			<label for="visilabel{{$index+1}}" ng-class="getClass($index, team.name)" />
+		</li>
+	</ul>
+	</div>
+	
+	<div class="cc-selector" ng-show="showdaysgamesselector">		
+		<ul class = "gamelist">
+		<li ng-repeat="game in daysgames">		
+			<input type="radio" id="gamelabel{{$index+1}}" ng-model="formData.game" name="game" value="{{game}}" ng-change="calculateDaysGames()" required />			
+			<label for="gamelabel{{$index+1}}" ng-class="getClassDaysGames($index, game.home, game.visi)"/>			
+			<p><strong>{{game.date}}</strong></p>			
+		</li>
+	</ul>
+	</div>
+	
+	<br><br>
+	
+	<input type="range" ng-model="formData.slider" min="-5" max="5" step="1" ng-mouseup="calculate()" ng-show="showgameselector"/>
+	<input type="range" ng-model="formData.slider" min="-5" max="5" step="1" ng-mouseup="calculateDaysGames()" ng-show="showdaysgamesselector"/>
+	<br><br>
+	<div ng-init="formData.slider = 0">
+	Home advantage <strong ng-bind="formData.slider"></strong>%
+	</div>
+	<br><br>
+		
+	<table ng-if="oddsData.length > 0" class="items table table-striped table-bordered table-condensed">
+	
+	<thead>
+	<tr>
+		<th>General Info</th>
+		<th></th>
+		<th></th>
+		<th></th>		
+	</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="odd in oddsData" ng-if="odd.type == 'info'" ng-class-odd="'odd'">    
+			<td>{{ odd.name }}</td>
+			<td>{{ odd.home }}</td>
+			<td>{{ odd.draw }}</td>
+			<td>{{ odd.visi }}</td>    
+		</tr>
+	</tbody>
+	</table>
+	
+	<table ng-if="oddsData.length > 0" class="items table table-striped table-bordered table-condensed">
+	
+	<thead>
+	<tr>
+		<th>Odds</th>
+		<th>Home</th>
+		<th>Draw</th>
+		<th>Visitor</th>		
+	</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="odd in oddsData" ng-if="odd.type == 'odds'" ng-class-even="'odd'">    
+			<td>{{ odd.name }}</td>
+			<td>{{ odd.home }}</td>
+			<td>{{ odd.draw }}</td>
+			<td>{{ odd.visi }}</td>    
+		</tr>
+	</tbody>
+	</table>
+	
+	<table ng-if="oddsData.length > 0" class="items table table-striped table-bordered table-condensed">
+	
+	<thead>
+	<tr>
+		<th>Odds</th>
+		<th>Under</th>		
+		<th>Over</th>		
+	</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="odd in oddsData" ng-if="odd.type == 'under'" ng-class-even="'odd'">    
+			<td>{{ odd.name }}</td>
+			<td>{{ odd.home }}</td>			
+			<td>{{ odd.visi }}</td>    
+		</tr>
+	</tbody>
+	</table>
+
+	<table ng-if="eventData.length > 0" class="items table table-striped table-bordered table-condensed" ng-show="showdaysgamesselector">
+	
+	<thead class = "veikkaus">
+	<tr>
+		<th>Veikkaus</th>
+		<th>Home</th>
+		<th>Draw</th>
+		<th>Visitor</th>		
+	</tr>
+	</thead>
+	<tbody class = "veikkaus">
+		<tr ng-repeat="event in eventData" class = "veikkaus">    
+			<td>{{ event.name }}</td>
+			<!--td ng-class = "getIsPelattava(event.name, 'home')">{{ event.home }}</td>
+			<td ng-class = "getIsPelattava(event.name, 'draw')">{{ event.draw }}</td>
+			<td ng-class = "getIsPelattava(event.name,'visi')">{{ event.visi }}</td-->    
+			
+			<td ng-style = "{ 'background-color' : getPelattavaStyle(event.name, 'home') }">{{ event.home }}</td>
+			<td ng-style = "{ 'background-color' : getPelattavaStyle(event.name, 'draw') }">{{ event.draw }}</td>
+			<td ng-style = "{ 'background-color' : getPelattavaStyle(event.name, 'visi') }">{{ event.visi }}</td>    
+		</tr>
+	</tbody>
+	</table>
+
+	
+</form>
+  
+  <!-- Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.min.js"></script>
+<script src="javascripts/controllers.js"></script>
+
+  </body>
+ </html>

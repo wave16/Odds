@@ -1,0 +1,97 @@
+<html ng-app="app">
+<head>
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<title>Odds Voimasuhteet</title>
+	
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+
+</head>
+
+<body>
+	
+	<!--form name="voimaForm" ng-controller="VoimaController">
+		
+		<ul>
+			<li><a href="/" >Pääsivu</a></li>			
+			<li><a href="" ng-click="logout()">Logout</a></li>
+		</ul>
+		
+		<div style="padding-top:15px;">
+            <table border="1" class="mytable">
+                    <tr>                        
+                        <td>Name</td>                        
+                        <td>Power</td>
+						<td>Action</td>
+                    </tr>
+                                
+                    <tr ng-repeat="team in teamlist">
+                        <td>{{team.name}}</td>
+                        <td>
+                           <span ng-hide="editMode">{{team.power}}</span>
+                           <input type="text" ng-show="editMode" ng-model="team.power" />
+                        </td> 
+						<td>
+                             <span> <button type="submit" ng-hide="editMode" ng-click="editMode = true; editItem(team)" >Edit</button></span>
+                             <span> <button type="submit" ng-show="editMode" ng-click="editMode = false; saveField(team)">Save</button></span>                             
+                        </td>
+                    </tr>                
+            </table>
+		</div>
+		<br>
+		<br>
+		<div style="font-weight:bold">Total power: {{totalPower()}} , should be 450</div>
+
+	</form-->
+	
+	<form name="voimaForm" ng-controller="VoimaController">
+		
+		<ul>
+			<li><a href="/" >Pääsivu</a></li>			
+			<li><a href="" ng-click="logout()">Logout</a></li>
+		</ul>
+		
+		<div>
+            <table class="voimatable">
+			
+				<thead>
+					<tr>
+						<th>Joukkue</th>
+						<th>Voima</th>
+					</tr>
+				</thead>
+			    <tbody>
+                    <tr ng-repeat="team in teamlist">
+                        <td>{{team.name}}</td>
+                        <td> 
+						   <input type="range" ng-model="team.power" min="15" max="50" step="0.5" />
+						   <strong ng-bind="team.power"/>
+                        </td> 						
+                    </tr>
+				</tbody>            
+			</table>
+			
+			<br>
+			
+			<div style="font-weight:bold; font-size: 1.1em">Total power: {{totalPower()}} , should be 450</div>
+			
+			<br>
+			
+			<span> <button type="submit" ng-click="saveVoima()">Save</button></span>
+			
+		</div>
+		
+		<br>
+		
+
+	</form>
+	
+  
+  <!-- Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.min.js"></script>
+<script src="javascripts/controllers.js"></script>
+
+  </body>
+ </html>

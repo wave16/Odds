@@ -1,0 +1,807 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+table {
+    float:left;    
+    margin-left:15px;
+	border-collapse: collapse;
+}
+
+.voimatable {
+	float: none;
+}
+
+th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #A7C942;
+    color: #000000;
+	border: 2px solid #98bf21;
+}
+
+.veikkaus th {
+	background-color: #FF0033;
+	border: 2px solid #CC0033
+}
+
+td {
+	border: 2px solid #98bf21;
+	padding-right:20px;
+}
+
+.veikkaus td {
+	border: 2px solid #CC0033
+}
+
+tr.odd td {
+    color: #000000;
+    background-color: #EAF2D3;
+}
+
+ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;    
+    display: inline-block;
+    *display: inline;
+    zoom: 1	
+}
+
+li {
+    float: left;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0;
+}
+
+a:link, a:visited {
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #33CCFF;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover, a:active {
+    background-color: #3399FF;
+}
+
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.ÄSSÄT{background-image:url(../images/assat.png);}
+.BLUES{background-image:url(../images/blues.png);}
+.HIFK{background-image:url(../images/hifk.png);}
+.HPK{background-image:url(../images/hpk.png);}
+.ILVES{background-image:url(../images/ilves.png);}
+.JYP{background-image:url(../images/jyp.png);}
+.KALPA{background-image:url(../images/kalpa.png);}
+.KÄRPÄT{background-image:url(../images/karpat.png);}
+.KOOKOO{background-image:url(../images/kookoo.png);}
+.LUKKO{background-image:url(../images/lukko.png);}
+.PELICANS{background-image:url(../images/pelicans.png);}
+.SAIPA{background-image:url(../images/saipa.png);}
+.SPORT{background-image:url(../images/sport.png);}
+.TAPPARA{background-image:url(../images/tappara.png);}
+.TPS{background-image:url(../images/tps.png);}
+
+.cc-selector input:active +.team-cc{opacity: .9;}
+.cc-selector input:checked +.team-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.team-cc{	
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.team-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+.cc-selector input:active +.teams-cc{opacity: .9;}
+.cc-selector input:checked +.teams-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.teams-cc{
+	margin: 25px;
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:150px;height:70px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.teams-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:#888}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}
+
+
+.ÄSSÄTBLUES{background-image:url(../images/assat.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTHIFK{background-image:url(../images/assat.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTHPK{background-image:url(../images/assat.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTILVES{background-image:url(../images/assat.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTJYP{background-image:url(../images/assat.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTKALPA{background-image:url(../images/assat.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTKÄRPÄT{background-image:url(../images/assat.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTKOOKOO{background-image:url(../images/assat.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTLUKKO{background-image:url(../images/assat.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTPELICANS{background-image:url(../images/assat.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTSAIPA{background-image:url(../images/assat.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTSPORT{background-image:url(../images/assat.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTTAPPARA{background-image:url(../images/assat.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ÄSSÄTTPS{background-image:url(../images/assat.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.BLUESÄSSÄT{background-image:url(../images/blues.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESHIFK{background-image:url(../images/blues.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESHPK{background-image:url(../images/blues.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESILVES{background-image:url(../images/blues.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESJYP{background-image:url(../images/blues.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESKALPA{background-image:url(../images/blues.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESKÄRPÄT{background-image:url(../images/blues.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESKOOKOO{background-image:url(../images/blues.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESLUKKO{background-image:url(../images/blues.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESPELICANS{background-image:url(../images/blues.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESSAIPA{background-image:url(../images/blues.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESSPORT{background-image:url(../images/blues.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESTAPPARA{background-image:url(../images/blues.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.BLUESTPS{background-image:url(../images/blues.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.HIFKÄSSÄT{background-image:url(../images/hifk.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKBLUES{background-image:url(../images/hifk.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKHPK{background-image:url(../images/hifk.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKILVES{background-image:url(../images/hifk.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKJYP{background-image:url(../images/hifk.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKKALPA{background-image:url(../images/hifk.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKKÄRPÄT{background-image:url(../images/hifk.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKKOOKOO{background-image:url(../images/hifk.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKLUKKO{background-image:url(../images/hifk.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKPELICANS{background-image:url(../images/hifk.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKSAIPA{background-image:url(../images/hifk.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKSPORT{background-image:url(../images/hifk.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKTAPPARA{background-image:url(../images/hifk.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HIFKTPS{background-image:url(../images/hifk.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.HPKÄSSÄT{background-image:url(../images/hpk.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKBLUES{background-image:url(../images/hpk.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKHIFK{background-image:url(../images/hpk.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKILVES{background-image:url(../images/hpk.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKJYP{background-image:url(../images/hpk.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKKALPA{background-image:url(../images/hpk.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKKÄRPÄT{background-image:url(../images/hpk.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKKOOKOO{background-image:url(../images/hpk.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKLUKKO{background-image:url(../images/hpk.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKPELICANS{background-image:url(../images/hpk.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKSAIPA{background-image:url(../images/hpk.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKSPORT{background-image:url(../images/hpk.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKTAPPARA{background-image:url(../images/hpk.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.HPKTPS{background-image:url(../images/hpk.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.KALPAÄSSÄT{background-image:url(../images/kalpa.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPABLUES{background-image:url(../images/kalpa.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPAHIFK{background-image:url(../images/kalpa.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPAHPK{background-image:url(../images/kalpa.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPAILVES{background-image:url(../images/kalpa.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPAJYP{background-image:url(../images/kalpa.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPAKÄRPÄT{background-image:url(../images/kalpa.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPAKOOKOO{background-image:url(../images/kalpa.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPALUKKO{background-image:url(../images/kalpa.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPAPELICANS{background-image:url(../images/kalpa.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPASAIPA{background-image:url(../images/kalpa.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPASPORT{background-image:url(../images/kalpa.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPATAPPARA{background-image:url(../images/kalpa.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KALPATPS{background-image:url(../images/kalpa.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.LUKKOÄSSÄT{background-image:url(../images/lukko.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOBLUES{background-image:url(../images/lukko.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOHIFK{background-image:url(../images/lukko.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOHPK{background-image:url(../images/lukko.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOILVES{background-image:url(../images/lukko.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOJYP{background-image:url(../images/lukko.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOKALPA{background-image:url(../images/lukko.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOKÄRPÄT{background-image:url(../images/lukko.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOKOOKOO{background-image:url(../images/lukko.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOPELICANS{background-image:url(../images/lukko.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOSAIPA{background-image:url(../images/lukko.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOSPORT{background-image:url(../images/lukko.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOTAPPARA{background-image:url(../images/lukko.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.LUKKOTPS{background-image:url(../images/lukko.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.TAPPARAÄSSÄT{background-image:url(../images/tappara.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARABLUES{background-image:url(../images/tappara.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARAHIFK{background-image:url(../images/tappara.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARAHPK{background-image:url(../images/tappara.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARAILVES{background-image:url(../images/tappara.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARAJYP{background-image:url(../images/tappara.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARAKALPA{background-image:url(../images/tappara.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARAKÄRPÄT{background-image:url(../images/tappara.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARAKOOKOO{background-image:url(../images/tappara.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARALUKKO{background-image:url(../images/tappara.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARAPELICANS{background-image:url(../images/tappara.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARASAIPA{background-image:url(../images/tappara.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARASPORT{background-image:url(../images/tappara.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TAPPARATPS{background-image:url(../images/tappara.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.SAIPAÄSSÄT{background-image:url(../images/saipa.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPABLUES{background-image:url(../images/saipa.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPAHIFK{background-image:url(../images/saipa.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPAHPK{background-image:url(../images/saipa.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPAILVES{background-image:url(../images/saipa.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPAJYP{background-image:url(../images/saipa.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPAKALPA{background-image:url(../images/saipa.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPAKÄRPÄT{background-image:url(../images/saipa.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPAKOOKOO{background-image:url(../images/saipa.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPALUKKO{background-image:url(../images/saipa.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPAPELICANS{background-image:url(../images/saipa.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPASPORT{background-image:url(../images/saipa.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPATAPPARA{background-image:url(../images/saipa.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SAIPATPS{background-image:url(../images/saipa.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.SPORTÄSSÄT{background-image:url(../images/sport.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTBLUES{background-image:url(../images/sport.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTHIFK{background-image:url(../images/sport.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTHPK{background-image:url(../images/sport.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTILVES{background-image:url(../images/sport.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTJYP{background-image:url(../images/sport.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTKALPA{background-image:url(../images/sport.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTKÄRPÄT{background-image:url(../images/sport.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTKOOKOO{background-image:url(../images/sport.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTLUKKO{background-image:url(../images/sport.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTPELICANS{background-image:url(../images/sport.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTSAIPA{background-image:url(../images/sport.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTSPORT{background-image:url(../images/sport.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTTAPPARA{background-image:url(../images/sport.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.SPORTTPS{background-image:url(../images/sport.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.TPSÄSSÄT{background-image:url(../images/tps.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSBLUES{background-image:url(../images/tps.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSHIFK{background-image:url(../images/tps.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSHPK{background-image:url(../images/tps.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSILVES{background-image:url(../images/tps.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSJYP{background-image:url(../images/tps.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSKALPA{background-image:url(../images/tps.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSKÄRPÄT{background-image:url(../images/tps.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSKOOKOO{background-image:url(../images/tps.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSLUKKO{background-image:url(../images/tps.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSPELICANS{background-image:url(../images/tps.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSSAIPA{background-image:url(../images/tps.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSSPORT{background-image:url(../images/tps.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.TPSTAPPARA{background-image:url(../images/tps.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.JYPÄSSÄT{background-image:url(../images/jyp.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPBLUES{background-image:url(../images/jyp.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPHIFK{background-image:url(../images/jyp.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPHPK{background-image:url(../images/jyp.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPILVES{background-image:url(../images/jyp.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPKALPA{background-image:url(../images/jyp.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPKÄRPÄT{background-image:url(../images/jyp.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPKOOKOO{background-image:url(../images/jyp.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPLUKKO{background-image:url(../images/jyp.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPPELICANS{background-image:url(../images/jyp.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPSAIPA{background-image:url(../images/jyp.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPSPORT{background-image:url(../images/jyp.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPTAPPARA{background-image:url(../images/jyp.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.JYPTPS{background-image:url(../images/jyp.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.KÄRPÄTÄSSÄT{background-image:url(../images/karpat.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTBLUES{background-image:url(../images/karpat.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTHIFK{background-image:url(../images/karpat.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTHPK{background-image:url(../images/karpat.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTILVES{background-image:url(../images/karpat.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTJYP{background-image:url(../images/karpat.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTKALPA{background-image:url(../images/karpat.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTKOOKOO{background-image:url(../images/karpat.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTLUKKO{background-image:url(../images/karpat.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTPELICANS{background-image:url(../images/karpat.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTSAIPA{background-image:url(../images/karpat.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTSPORT{background-image:url(../images/karpat.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTTAPPARA{background-image:url(../images/karpat.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KÄRPÄTTPS{background-image:url(../images/karpat.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.KOOKOOÄSSÄT{background-image:url(../images/kookoo.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOBLUES{background-image:url(../images/kookoo.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOHIFK{background-image:url(../images/kookoo.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOHPK{background-image:url(../images/kookoo.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOILVES{background-image:url(../images/kookoo.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOJYP{background-image:url(../images/kookoo.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOKALPA{background-image:url(../images/kookoo.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOKÄRPÄT{background-image:url(../images/kookoo.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOLUKKO{background-image:url(../images/kookoo.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOPELICANS{background-image:url(../images/kookoo.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOSAIPA{background-image:url(../images/kookoo.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOSPORT{background-image:url(../images/kookoo.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOTAPPARA{background-image:url(../images/kookoo.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.KOOKOOTPS{background-image:url(../images/kookoo.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.ILVESÄSSÄT{background-image:url(../images/ilves.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESBLUES{background-image:url(../images/ilves.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESHIFK{background-image:url(../images/ilves.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESHPK{background-image:url(../images/ilves.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESJYP{background-image:url(../images/ilves.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESKALPA{background-image:url(../images/ilves.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESKÄRPÄT{background-image:url(../images/ilves.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESKOOKOO{background-image:url(../images/ilves.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESLUKKO{background-image:url(../images/ilves.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESPELICANS{background-image:url(../images/ilves.png), url(../images/pelicans.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESSAIPA{background-image:url(../images/ilves.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESSPORT{background-image:url(../images/ilves.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESTAPPARA{background-image:url(../images/ilves.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.ILVESTPS{background-image:url(../images/ilves.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+
+.PELICANSÄSSÄT{background-image:url(../images/pelicans.png), url(../images/assat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSBLUES{background-image:url(../images/pelicans.png), url(../images/blues.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSHIFK{background-image:url(../images/pelicans.png), url(../images/hifk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSHPK{background-image:url(../images/pelicans.png), url(../images/hpk.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSILVES{background-image:url(../images/pelicans.png), url(../images/ilves.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSJYP{background-image:url(../images/pelicans.png), url(../images/jyp.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSKALPA{background-image:url(../images/pelicans.png), url(../images/kalpa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSKÄRPÄT{background-image:url(../images/pelicans.png), url(../images/karpat.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSKOOKOO{background-image:url(../images/pelicans.png), url(../images/kookoo.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSLUKKO{background-image:url(../images/pelicans.png), url(../images/lukko.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSSAIPA{background-image:url(../images/pelicans.png), url(../images/saipa.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSSPORT{background-image:url(../images/pelicans.png), url(../images/sport.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSTAPPARA{background-image:url(../images/pelicans.png), url(../images/tappara.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
+.PELICANSTPS{background-image:url(../images/pelicans.png), url(../images/tps.png);
+background-position: left top, right bottom;
+background-repeat: no-repeat;}
